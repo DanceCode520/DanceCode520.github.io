@@ -34,14 +34,18 @@ jQuery(document).ready(function($) {
         portrait_modal.open();
     });
     $('[data-remodal-id=portrait-modal] button').click(function(event) {
-        $(".portrait img").attr('src', '{0}'.format($("#avatar-url").val()));
+        if ($("#avatar-url").val() != "") {
+            $(".portrait img").attr('src', '{0}'.format($("#avatar-url").val()));
+        }
     });
     var weixin_modal = $('[data-remodal-id=weixin-modal]').remodal();
     $(".weixin").click(function(event) {
         weixin_modal.open();
     });
     $('[data-remodal-id=weixin-modal] button').click(function(event) {
-        $(".weixin img").attr('src', $("#weixin-url").val());
+        if ($("#weixin-url").val() != "") {
+            $(".weixin img").attr('src', $("#weixin-url").val());
+        }
     });
 
     $('.info-header').hover(function() {
